@@ -1,0 +1,88 @@
+<div class="text-layout">
+  <h1>Pipes Básicos</h1>
+  <p>Pipes incluidos en Angular - Common Module</p>
+</div>
+
+<div class="grid">
+  <div class="col-4">
+    <p-card header="UPPERCASE" [subheader]="stringUpper">
+      {{ !upper ? stringUpper : (stringUpper | uppercase) }}
+      <p-footer>
+        <button
+          pButton
+          type="button"
+          label="{{ !upper ? 'Activar' : 'Desactivar' }}"
+          icon="{{
+            !upper ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+          }}"
+          (click)="upper = !upper"
+          class="w-4 p-button-lg"
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="lowercase" [subheader]="stringLower">
+      {{ !lower ? stringLower : (stringLower | lowercase) }}
+      <p-footer>
+        <button
+          pButton
+          class="w-4 p-button-lg"
+          label="{{ !lower ? 'Activar' : 'Desactivar' }}"
+          icon="{{
+            !lower ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+          }}"
+          (click)="lower = !lower"
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Titlecase" [subheader]="stringTitle">
+      {{ !title ? stringTitle : (stringTitle | titlecase) }}
+      <p-footer>
+        <button
+          pButton
+          class="w-4 p-button-lg"
+          label="{{ !title ? 'Activar' : 'Desactivar' }}"
+          icon="{{
+            !title ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+          }}"
+          (click)="title = !title"
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+</div>
+
+<div class="text-layout">
+  <h1>Pipes de tipo Date</h1>
+  <p>Pipes para manejar las fechas</p>
+</div>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card>
+      <ul style="font-size: larger">
+        <li>Variable fecha</li>
+        <li>Variable fecha con pipe Date</li>
+        <li>Variable fecha con pipe Date tipo shortDate</li>
+        <li>Variable fecha con pipe Date tipo long</li>
+        <li>Variable fecha con pipe Date formato personalizado</li>
+      </ul>
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card>
+      <ul style="font-size: larger">
+        <li>{{ fecha }}</li>
+        <li>{{ fecha | date }}</li>
+        <li>{{ fecha | date: "shortDate" }}</li>
+        <li>{{ fecha | date: "long" }}</li>
+        <li>{{ fecha | date:  'dd/MM/yyyy HH:mm'}}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
