@@ -1,35 +1,35 @@
 <div class="text-layout">
   <h1>Pipes Básicos</h1>
-  <p>Pipes incluidos en Angular - Common Module</p>
+  <p>Pipes incluidos en Angular - Common Module | Textos y Fechas</p>
 </div>
 
 <div class="grid">
-  <div class="col-4">
+  <div class="col-12 md:col-4">
     <p-card header="UPPERCASE" [subheader]="stringUpper">
       {{ !upper ? stringUpper : (stringUpper | uppercase) }}
       <p-footer>
         <button
           pButton
           type="button"
-          label="{{ !upper ? 'Activar' : 'Desactivar' }}"
+          label="{{ !upper ? 'Activar Pipe' : 'Desactivar Pipe' }}"
           icon="{{
             !upper ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
           }}"
           (click)="upper = !upper"
-          class="w-4 p-button-lg"
+          class="w-full p-button-lg lg:w-7"
         ></button>
       </p-footer>
     </p-card>
   </div>
 
-  <div class="col-4">
+  <div class="col-12  md:col-4">
     <p-card header="lowercase" [subheader]="stringLower">
       {{ !lower ? stringLower : (stringLower | lowercase) }}
       <p-footer>
         <button
           pButton
-          class="w-4 p-button-lg"
-          label="{{ !lower ? 'Activar' : 'Desactivar' }}"
+          class="w-full p-button-lg lg:w-7"
+          label="{{ !lower ? 'Activar Pipe' : 'Desactivar Pipe' }}"
           icon="{{
             !lower ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
           }}"
@@ -39,14 +39,14 @@
     </p-card>
   </div>
 
-  <div class="col-4">
+  <div class="col-12  md:col-4">
     <p-card header="Titlecase" [subheader]="stringTitle">
       {{ !title ? stringTitle : (stringTitle | titlecase) }}
       <p-footer>
         <button
           pButton
-          class="w-4 p-button-lg"
-          label="{{ !title ? 'Activar' : 'Desactivar' }}"
+          class="w-full p-button-lg lg:w-7"
+          label="{{ !title ? 'Activar Pipe' : 'Desactivar Pipe' }}"
           icon="{{
             !title ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
           }}"
@@ -72,6 +72,11 @@
         <li>Variable fecha con pipe Date tipo long</li>
         <li>Variable fecha con pipe Date formato personalizado</li>
       </ul>
+      <hr />
+      <ul style="font-size: larger">
+        <li>Fecha idioma español</li>
+        <li>Fecha idioma frances</li>
+      </ul>
     </p-card>
   </div>
   <div class="col-6">
@@ -81,7 +86,12 @@
         <li>{{ fecha | date }}</li>
         <li>{{ fecha | date: "shortDate" }}</li>
         <li>{{ fecha | date: "long" }}</li>
-        <li>{{ fecha | date:  'dd/MM/yyyy HH:mm'}}</li>
+        <li>{{ fecha | date: "dd/MM/yyyy HH:mm" }}</li>
+      </ul>
+      <hr />
+      <ul style="font-size: larger">
+        <li>{{ fecha | date: "long" }}</li>
+        <li>{{ fecha | date: "long":"":"fr" }}</li>
       </ul>
     </p-card>
   </div>

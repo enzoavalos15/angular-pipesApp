@@ -1,1 +1,80 @@
-<p>numeros works!</p>
+<div class="text-layout">
+  <h1>Pipes Básicos</h1>
+  <p>Pipes incluidos en Angular - Common Module | Números</p>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="NUMBER | Ventas netas" [subheader]="ventasNetas.toString()">
+      <strong>{{
+        !btnVentasNetas ? ventasNetas : (ventasNetas | number: "1.2-2":"es-Ar")
+      }}</strong>
+      <p-footer>
+        <button
+          pButton
+          type="button"
+          label="{{ !btnVentasNetas ? 'Activar Pipe' : 'Desactivar Pipe' }}"
+          icon="{{
+            !btnVentasNetas
+              ? 'pi pi-angle-double-up'
+              : 'pi pi-angle-double-down'
+          }}"
+          (click)="btnVentasNetas = !btnVentasNetas"
+          class="w-full p-button-lg lg:w-7 "
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card
+      header="CURRENCY | Ventas netas"
+      [subheader]="ventasNetas.toString()"
+    >
+      <strong>{{
+        !btnCurrency
+          ? ventasNetas
+          : (ventasNetas | currency:'ARS')
+      }}</strong>
+      <p-footer>
+        <button
+          pButton
+          type="button"
+          label="{{ !btnCurrency ? 'Activar Pipe' : 'Desactivar Pipe' }}"
+          icon="{{
+            !btnCurrency ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+          }}"
+          (click)="btnCurrency = !btnCurrency"
+          class="w-full p-button-lg lg:w-7 "
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="PERCENT | Ganancia porcentual" subheader="{{porcentaje}} del valor neto">
+      <strong>{{
+        !btnPorcentaje ? porcentaje : (porcentaje | percent:'2.2-2')
+      }}</strong>
+      <p-footer>
+        <button
+          pButton
+          type="button"
+          label="{{ !btnPorcentaje ? 'Activar Pipe' : 'Desactivar Pipe' }}"
+          icon="{{
+            !btnPorcentaje
+              ? 'pi pi-angle-double-up'
+              : 'pi pi-angle-double-down'
+          }}"
+          (click)="btnPorcentaje = !btnPorcentaje"
+          class="w-full p-button-lg lg:w-7"
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+</div>
+
+<!-- icon="{{
+                !upper ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+              }}" (click)="upper = !upper"
+             -->
