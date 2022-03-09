@@ -13,7 +13,7 @@
           type="button"
           label="{{ !upper ? 'Activar Pipe' : 'Desactivar Pipe' }}"
           icon="{{
-            !upper ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+            !upper ? 'pi pi-eye' : 'pi pi-eye-slash'
           }}"
           (click)="upper = !upper"
           class="w-full p-button-lg lg:w-7"
@@ -31,7 +31,7 @@
           class="w-full p-button-lg lg:w-7"
           label="{{ !lower ? 'Activar Pipe' : 'Desactivar Pipe' }}"
           icon="{{
-            !lower ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+            !lower ? 'pi pi-eye' : 'pi pi-eye-slash'
           }}"
           (click)="lower = !lower"
         ></button>
@@ -48,7 +48,7 @@
           class="w-full p-button-lg lg:w-7"
           label="{{ !title ? 'Activar Pipe' : 'Desactivar Pipe' }}"
           icon="{{
-            !title ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'
+            !title ? 'pi pi-eye' : 'pi pi-eye-slash'
           }}"
           (click)="title = !title"
         ></button>

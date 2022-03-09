@@ -13,6 +13,7 @@ import { VentasModule } from './ventas/ventas.module';
 import localeEsAr from '@angular/common/locales/es-AR';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+
 registerLocaleData(localeEsAr);
 registerLocaleData(localeFr);
 
