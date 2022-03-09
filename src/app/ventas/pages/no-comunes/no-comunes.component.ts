@@ -57,6 +57,12 @@ export class NoComunesComponent {
   }
 
   //async pipe
-  miObservable = interval(1000);
+  miObservable = interval(2000);
+
+  valorPromesa = new Promise((resolve, reject)=>{
+    setTimeout(() => {
+      resolve('Tenemos data de promesa 3500ms de timeout');
+    }, 3500);
+  })
 
 }
