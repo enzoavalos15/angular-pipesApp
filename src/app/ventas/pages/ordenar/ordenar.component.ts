@@ -9,16 +9,9 @@ import { Jugadores } from '../../interfaces/ventas.interface';
 export class OrdenarComponent {
   mayus: boolean = true;
 
-  tipo:string = '';
+  tipo: string = '';
 
   jugadores: Jugadores[] = [
-    {
-      nombre: 'Enzo',
-      apellido: 'Avalos',
-      edad: 24,
-      activo: true,
-      posicion: 'Ala-pivot',
-    },
     {
       nombre: 'Nacho',
       apellido: 'Diaz',
@@ -41,6 +34,13 @@ export class OrdenarComponent {
       posicion: 'Ala-pivot',
     },
     {
+      nombre: 'Enzo',
+      apellido: 'Avalos',
+      edad: 24,
+      activo: true,
+      posicion: 'Ala-pivot',
+    },
+    {
       nombre: 'Emanuel',
       apellido: 'Ginobili',
       edad: 43,
@@ -49,7 +49,7 @@ export class OrdenarComponent {
     },
     {
       nombre: 'Shaquille',
-      apellido:"O'neal",
+      apellido: "O'neal",
       edad: 47,
       activo: false,
       posicion: 'Pivot',
@@ -81,8 +81,7 @@ export class OrdenarComponent {
     this.mayus = !this.mayus;
   }
 
-  ordenar(valor:string){
+  ordenar(valor: string) {
     this.tipo = valor;
   }
-
 }

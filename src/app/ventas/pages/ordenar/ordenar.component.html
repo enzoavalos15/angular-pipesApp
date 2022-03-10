@@ -78,3 +78,32 @@
     </p-table>
   </div>
 </div>
+
+<div class="grid">
+    <div class="col mt-2">
+      <h2 class="text-layout">
+          PrimeNG sortable table
+      </h2>
+    <p-table [value]="jugadores | slice:0 " responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="apellido">Apellido <p-sortIcon field="apellido"></p-sortIcon></th>
+            <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
+            <th pSortableColumn="posicion">Posicion <p-sortIcon field="posicion"></p-sortIcon></th>
+            <th pSortableColumn="edad">Edad <p-sortIcon field="edad"></p-sortIcon></th>
+            <th pSortableColumn="activo">Activo <p-sortIcon field="activo"></p-sortIcon></th>
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-jugador>
+        <tr>
+          <td>{{ jugador.apellido }}</td>
+          <td>{{ jugador.nombre }}</td>
+          <td>{{ jugador.posicion }}</td>
+          <td>{{ jugador.edad }}</td>
+          <td>{{ jugador.activo | sino | mayusculas:mayus }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
